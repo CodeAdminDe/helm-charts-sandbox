@@ -6,9 +6,10 @@
 ### Important operational notes
 
 * This chart intentionally renders no `Ingress` and no `HTTPRoute`. `derper` must be exposed directly via the Kubernetes `Service`.
-* Default container ports are non-root friendly: `8443/tcp` for DERP and `8080/tcp` for HTTP. The Service maps them to `443` and `80`.
+* Default `letsencrypt` mode binds DERP directly on container port `443/tcp`; the chart keeps non-root by setting `net.ipv4.ip_unprivileged_port_start=443` instead of adding extra Linux capabilities.
+* Plain HTTP stays on `8080/tcp` by default and is exposed via Service port `80` for ACME HTTP-01.
 * The chart always passes `-c /var/lib/derper/derper.key` to preserve DERP node key behavior in non-root mode. Keep this path on persistent storage for stable node identity.
-* `certificates.mode=letsencrypt` requires direct reachability on TCP/80 and TCP/443.
+* `certificates.mode=letsencrypt` requires `derper` itself to listen on `:443`; mapping Service port `443` to a higher in-container port is not sufficient.
 * `certificates.mode=manual` mounts an existing secret so that DERP sees files as `/var/lib/derper/certs/<hostname>.crt` and `/var/lib/derper/certs/<hostname>.key`, matching upstream expectations.
 * `stun.enabled=false` is the intended default when STUN comes from an external `coturn` deployment.
 * `derper.verifyClientUrl` is the preferred admission path for Headscale in this repo. The chart intentionally does not expose `--verify-clients`, which would require a colocated `tailscaled`.
@@ -49,14 +50,14 @@ service:
   https:
     enabled: true
     port: 443
-    targetPort: 8443
+    targetPort: 443
 
 stun:
   enabled: false
 
 derper:
   hostname: relst01.codeadmin.de
-  addr: ":8443"
+  addr: ":443"
   httpPort: 8080
   configPath: /var/lib/derper/derper.key
   verifyClientUrl: https://canet.codeadmin.de/verify

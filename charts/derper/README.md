@@ -2,7 +2,7 @@
 
 # derper
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.94.2](https://img.shields.io/badge/AppVersion-1.94.2-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.94.2](https://img.shields.io/badge/AppVersion-1.94.2-informational?style=flat-square)
 
 A Helm chart for running a Tailscale DERP relay on Kubernetes.
 
@@ -88,7 +88,7 @@ Alternatively, you could provide the values which you want to override at the CL
 	</thead>
 	<tbody>
 		<tr>
-			<td id="affinity"><a href="./values.yaml#L239">affinity</a></td>
+			<td id="affinity"><a href="./values.yaml#L244">affinity</a></td>
 			<td>
 object
 </td>
@@ -130,7 +130,7 @@ true
 			<td>Apply default pod/container security settings.</td>
 		</tr>
 		<tr>
-			<td id="certificates"><a href="./values.yaml#L120">certificates</a></td>
+			<td id="certificates"><a href="./values.yaml#L125">certificates</a></td>
 			<td>
 object
 </td>
@@ -153,7 +153,7 @@ object
 			<td>Certificate management configuration.</td>
 		</tr>
 		<tr>
-			<td id="certificates--acmeEmail"><a href="./values.yaml#L126">certificates.acmeEmail</a></td>
+			<td id="certificates--acmeEmail"><a href="./values.yaml#L131">certificates.acmeEmail</a></td>
 			<td>
 string
 </td>
@@ -167,7 +167,7 @@ string
 			<td>Optional ACME contact email for `letsencrypt`.</td>
 		</tr>
 		<tr>
-			<td id="certificates--certDir"><a href="./values.yaml#L124">certificates.certDir</a></td>
+			<td id="certificates--certDir"><a href="./values.yaml#L129">certificates.certDir</a></td>
 			<td>
 string
 </td>
@@ -181,7 +181,7 @@ string
 			<td>Certificate directory passed to `-certdir`.</td>
 		</tr>
 		<tr>
-			<td id="certificates--manual--crtKey"><a href="./values.yaml#L131">certificates.manual.crtKey</a></td>
+			<td id="certificates--manual--crtKey"><a href="./values.yaml#L136">certificates.manual.crtKey</a></td>
 			<td>
 string
 </td>
@@ -195,7 +195,7 @@ string
 			<td>Secret key containing the PEM certificate.</td>
 		</tr>
 		<tr>
-			<td id="certificates--manual--existingSecret"><a href="./values.yaml#L129">certificates.manual.existingSecret</a></td>
+			<td id="certificates--manual--existingSecret"><a href="./values.yaml#L134">certificates.manual.existingSecret</a></td>
 			<td>
 string
 </td>
@@ -209,7 +209,7 @@ string
 			<td>Existing secret providing certificate material for `manual` mode.</td>
 		</tr>
 		<tr>
-			<td id="certificates--manual--keyKey"><a href="./values.yaml#L133">certificates.manual.keyKey</a></td>
+			<td id="certificates--manual--keyKey"><a href="./values.yaml#L138">certificates.manual.keyKey</a></td>
 			<td>
 string
 </td>
@@ -223,7 +223,7 @@ string
 			<td>Secret key containing the PEM private key.</td>
 		</tr>
 		<tr>
-			<td id="certificates--mode"><a href="./values.yaml#L122">certificates.mode</a></td>
+			<td id="certificates--mode"><a href="./values.yaml#L127">certificates.mode</a></td>
 			<td>
 string
 </td>
@@ -237,7 +237,7 @@ string
 			<td>Certificate mode passed to `-certmode`. Supported values: `letsencrypt`, `manual`.</td>
 		</tr>
 		<tr>
-			<td id="cnps"><a href="./values.yaml#L204">cnps</a></td>
+			<td id="cnps"><a href="./values.yaml#L209">cnps</a></td>
 			<td>
 object
 </td>
@@ -279,7 +279,7 @@ object
 			<td>Optional native CiliumNetworkPolicy configuration. This chart intentionally does not depend on `libchart-cnps`.</td>
 		</tr>
 		<tr>
-			<td id="cnps--egress--dnsEndpoints"><a href="./values.yaml#L212">cnps.egress.dnsEndpoints</a></td>
+			<td id="cnps--egress--dnsEndpoints"><a href="./values.yaml#L217">cnps.egress.dnsEndpoints</a></td>
 			<td>
 list
 </td>
@@ -306,7 +306,7 @@ list
 			<td>Default DNS endpoint selectors for kube-dns/CoreDNS.</td>
 		</tr>
 		<tr>
-			<td id="cnps--egress--extraRules"><a href="./values.yaml#L224">cnps.egress.extraRules</a></td>
+			<td id="cnps--egress--extraRules"><a href="./values.yaml#L229">cnps.egress.extraRules</a></td>
 			<td>
 list
 </td>
@@ -320,7 +320,7 @@ list
 			<td>Additional egress rules appended after the built-in DNS and world egress rules.</td>
 		</tr>
 		<tr>
-			<td id="cnps--egress--worldPorts"><a href="./values.yaml#L220">cnps.egress.worldPorts</a></td>
+			<td id="cnps--egress--worldPorts"><a href="./values.yaml#L225">cnps.egress.worldPorts</a></td>
 			<td>
 list
 </td>
@@ -339,7 +339,7 @@ list
 			<td>Default world egress ports for ACME, `verify-client-url`, and optional DERP mesh traffic.</td>
 		</tr>
 		<tr>
-			<td id="cnps--enabled"><a href="./values.yaml#L206">cnps.enabled</a></td>
+			<td id="cnps--enabled"><a href="./values.yaml#L211">cnps.enabled</a></td>
 			<td>
 bool
 </td>
@@ -353,7 +353,7 @@ false
 			<td>Enable DERP-specific CiliumNetworkPolicy rendering.</td>
 		</tr>
 		<tr>
-			<td id="cnps--ingress--extraRules"><a href="./values.yaml#L209">cnps.ingress.extraRules</a></td>
+			<td id="cnps--ingress--extraRules"><a href="./values.yaml#L214">cnps.ingress.extraRules</a></td>
 			<td>
 list
 </td>
@@ -367,7 +367,7 @@ list
 			<td>Additional ingress rules appended after the built-in world-to-DERP rule.</td>
 		</tr>
 		<tr>
-			<td id="derper"><a href="./values.yaml#L91">derper</a></td>
+			<td id="derper"><a href="./values.yaml#L96">derper</a></td>
 			<td>
 object
 </td>
@@ -375,7 +375,7 @@ object
 				<div style="max-width: 300px;">
 <pre lang="json">
 {
-  "addr": ":8443",
+  "addr": ":443",
   "configPath": "/var/lib/derper/derper.key",
   "extraArgs": [],
   "home": "blank",
@@ -398,21 +398,21 @@ object
 			<td>DERP process configuration.</td>
 		</tr>
 		<tr>
-			<td id="derper--addr"><a href="./values.yaml#L95">derper.addr</a></td>
+			<td id="derper--addr"><a href="./values.yaml#L100">derper.addr</a></td>
 			<td>
 string
 </td>
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-":8443"
+":443"
 </pre>
 </div>
 			</td>
-			<td>DERP HTTPS listen address passed to `-a`.</td>
+			<td>DERP HTTPS listen address passed to `-a`. `letsencrypt` requires `:443`.</td>
 		</tr>
 		<tr>
-			<td id="derper--configPath"><a href="./values.yaml#L99">derper.configPath</a></td>
+			<td id="derper--configPath"><a href="./values.yaml#L104">derper.configPath</a></td>
 			<td>
 string
 </td>
@@ -426,7 +426,7 @@ string
 			<td>Persistent DERP config file passed to `-c`.</td>
 		</tr>
 		<tr>
-			<td id="derper--extraArgs"><a href="./values.yaml#L107">derper.extraArgs</a></td>
+			<td id="derper--extraArgs"><a href="./values.yaml#L112">derper.extraArgs</a></td>
 			<td>
 list
 </td>
@@ -440,7 +440,7 @@ list
 			<td>Extra DERP arguments appended verbatim to the container args list.</td>
 		</tr>
 		<tr>
-			<td id="derper--home"><a href="./values.yaml#L101">derper.home</a></td>
+			<td id="derper--home"><a href="./values.yaml#L106">derper.home</a></td>
 			<td>
 string
 </td>
@@ -454,7 +454,7 @@ string
 			<td>Value passed to `-home`. Use `blank` for an empty landing page.</td>
 		</tr>
 		<tr>
-			<td id="derper--hostname"><a href="./values.yaml#L93">derper.hostname</a></td>
+			<td id="derper--hostname"><a href="./values.yaml#L98">derper.hostname</a></td>
 			<td>
 string
 </td>
@@ -468,7 +468,7 @@ string
 			<td>Public DERP hostname used for TLS and DERP map entries.</td>
 		</tr>
 		<tr>
-			<td id="derper--httpPort"><a href="./values.yaml#L97">derper.httpPort</a></td>
+			<td id="derper--httpPort"><a href="./values.yaml#L102">derper.httpPort</a></td>
 			<td>
 int
 </td>
@@ -482,7 +482,7 @@ int
 			<td>DERP HTTP listen port passed to `-http-port` when `service.http.enabled=true`.</td>
 		</tr>
 		<tr>
-			<td id="derper--mesh--enabled"><a href="./values.yaml#L110">derper.mesh.enabled</a></td>
+			<td id="derper--mesh--enabled"><a href="./values.yaml#L115">derper.mesh.enabled</a></td>
 			<td>
 bool
 </td>
@@ -496,7 +496,7 @@ false
 			<td>Enable DERP mesh configuration.</td>
 		</tr>
 		<tr>
-			<td id="derper--mesh--pskSecret--key"><a href="./values.yaml#L115">derper.mesh.pskSecret.key</a></td>
+			<td id="derper--mesh--pskSecret--key"><a href="./values.yaml#L120">derper.mesh.pskSecret.key</a></td>
 			<td>
 string
 </td>
@@ -510,7 +510,7 @@ string
 			<td>Secret key containing the DERP mesh PSK value.</td>
 		</tr>
 		<tr>
-			<td id="derper--mesh--pskSecret--name"><a href="./values.yaml#L113">derper.mesh.pskSecret.name</a></td>
+			<td id="derper--mesh--pskSecret--name"><a href="./values.yaml#L118">derper.mesh.pskSecret.name</a></td>
 			<td>
 string
 </td>
@@ -524,7 +524,7 @@ string
 			<td>Existing secret containing the DERP mesh PSK.</td>
 		</tr>
 		<tr>
-			<td id="derper--mesh--with"><a href="./values.yaml#L117">derper.mesh.with</a></td>
+			<td id="derper--mesh--with"><a href="./values.yaml#L122">derper.mesh.with</a></td>
 			<td>
 list
 </td>
@@ -538,7 +538,7 @@ list
 			<td>List of DERP peers passed to `-mesh-with` as a comma-separated list.</td>
 		</tr>
 		<tr>
-			<td id="derper--verifyClientUrl"><a href="./values.yaml#L103">derper.verifyClientUrl</a></td>
+			<td id="derper--verifyClientUrl"><a href="./values.yaml#L108">derper.verifyClientUrl</a></td>
 			<td>
 string
 </td>
@@ -552,7 +552,7 @@ string
 			<td>Optional Headscale admission controller URL passed to `-verify-client-url`.</td>
 		</tr>
 		<tr>
-			<td id="derper--verifyClientUrlFailOpen"><a href="./values.yaml#L105">derper.verifyClientUrlFailOpen</a></td>
+			<td id="derper--verifyClientUrlFailOpen"><a href="./values.yaml#L110">derper.verifyClientUrlFailOpen</a></td>
 			<td>
 bool
 </td>
@@ -566,7 +566,7 @@ false
 			<td>Fail-open setting for `-verify-client-url-fail-open`.</td>
 		</tr>
 		<tr>
-			<td id="extraEnv"><a href="./values.yaml#L201">extraEnv</a></td>
+			<td id="extraEnv"><a href="./values.yaml#L206">extraEnv</a></td>
 			<td>
 object
 </td>
@@ -682,7 +682,7 @@ string
 			<td>Override release-based naming.</td>
 		</tr>
 		<tr>
-			<td id="nodeSelector"><a href="./values.yaml#L233">nodeSelector</a></td>
+			<td id="nodeSelector"><a href="./values.yaml#L238">nodeSelector</a></td>
 			<td>
 object
 </td>
@@ -696,7 +696,7 @@ object
 			<td>Workload node selector.</td>
 		</tr>
 		<tr>
-			<td id="persistence"><a href="./values.yaml#L136">persistence</a></td>
+			<td id="persistence"><a href="./values.yaml#L141">persistence</a></td>
 			<td>
 object
 </td>
@@ -722,7 +722,7 @@ object
 			<td>Persistence settings for the DERP config file and ACME cache.</td>
 		</tr>
 		<tr>
-			<td id="persistence--accessModes"><a href="./values.yaml#L146">persistence.accessModes</a></td>
+			<td id="persistence--accessModes"><a href="./values.yaml#L151">persistence.accessModes</a></td>
 			<td>
 list
 </td>
@@ -738,7 +738,7 @@ list
 			<td>PVC access modes.</td>
 		</tr>
 		<tr>
-			<td id="persistence--annotations"><a href="./values.yaml#L149">persistence.annotations</a></td>
+			<td id="persistence--annotations"><a href="./values.yaml#L154">persistence.annotations</a></td>
 			<td>
 object
 </td>
@@ -752,7 +752,7 @@ object
 			<td>PVC annotations.</td>
 		</tr>
 		<tr>
-			<td id="persistence--emptyDirSizeLimit"><a href="./values.yaml#L155">persistence.emptyDirSizeLimit</a></td>
+			<td id="persistence--emptyDirSizeLimit"><a href="./values.yaml#L160">persistence.emptyDirSizeLimit</a></td>
 			<td>
 string
 </td>
@@ -766,7 +766,7 @@ string
 			<td>`emptyDir` size limit when `persistence.enabled=false`.</td>
 		</tr>
 		<tr>
-			<td id="persistence--enabled"><a href="./values.yaml#L138">persistence.enabled</a></td>
+			<td id="persistence--enabled"><a href="./values.yaml#L143">persistence.enabled</a></td>
 			<td>
 bool
 </td>
@@ -780,7 +780,7 @@ true
 			<td>Enable persistent storage for DERP state.</td>
 		</tr>
 		<tr>
-			<td id="persistence--existingClaim"><a href="./values.yaml#L140">persistence.existingClaim</a></td>
+			<td id="persistence--existingClaim"><a href="./values.yaml#L145">persistence.existingClaim</a></td>
 			<td>
 string
 </td>
@@ -794,7 +794,7 @@ string
 			<td>Existing PVC name to reuse instead of creating one.</td>
 		</tr>
 		<tr>
-			<td id="persistence--retain"><a href="./values.yaml#L153">persistence.retain</a></td>
+			<td id="persistence--retain"><a href="./values.yaml#L158">persistence.retain</a></td>
 			<td>
 bool
 </td>
@@ -808,7 +808,7 @@ false
 			<td>Keep the PVC on uninstall.</td>
 		</tr>
 		<tr>
-			<td id="persistence--size"><a href="./values.yaml#L142">persistence.size</a></td>
+			<td id="persistence--size"><a href="./values.yaml#L147">persistence.size</a></td>
 			<td>
 string
 </td>
@@ -822,7 +822,7 @@ string
 			<td>PVC size when the chart creates a claim.</td>
 		</tr>
 		<tr>
-			<td id="persistence--storageClass"><a href="./values.yaml#L144">persistence.storageClass</a></td>
+			<td id="persistence--storageClass"><a href="./values.yaml#L149">persistence.storageClass</a></td>
 			<td>
 string
 </td>
@@ -836,7 +836,7 @@ string
 			<td>PVC storage class. Empty uses the cluster default.</td>
 		</tr>
 		<tr>
-			<td id="persistence--volumeName"><a href="./values.yaml#L151">persistence.volumeName</a></td>
+			<td id="persistence--volumeName"><a href="./values.yaml#L156">persistence.volumeName</a></td>
 			<td>
 string
 </td>
@@ -850,7 +850,7 @@ string
 			<td>Optional PVC volume name.</td>
 		</tr>
 		<tr>
-			<td id="podAnnotations"><a href="./values.yaml#L227">podAnnotations</a></td>
+			<td id="podAnnotations"><a href="./values.yaml#L232">podAnnotations</a></td>
 			<td>
 object
 </td>
@@ -864,7 +864,7 @@ object
 			<td>Pod annotations.</td>
 		</tr>
 		<tr>
-			<td id="podLabels"><a href="./values.yaml#L230">podLabels</a></td>
+			<td id="podLabels"><a href="./values.yaml#L235">podLabels</a></td>
 			<td>
 object
 </td>
@@ -886,7 +886,13 @@ object
 				<div style="max-width: 300px;">
 <pre lang="json">
 {
-  "fsGroup": 65532
+  "fsGroup": 65532,
+  "sysctls": [
+    {
+      "name": "net.ipv4.ip_unprivileged_port_start",
+      "value": "443"
+    }
+  ]
 }
 </pre>
 </div>
@@ -894,7 +900,26 @@ object
 			<td>Pod-level security context for DERP pods.</td>
 		</tr>
 		<tr>
-			<td id="probes"><a href="./values.yaml#L167">probes</a></td>
+			<td id="podSecurityContext--sysctls"><a href="./values.yaml#L78">podSecurityContext.sysctls</a></td>
+			<td>
+list
+</td>
+			<td>
+				<div style="max-width: 300px;">
+<pre lang="json">
+[
+  {
+    "name": "net.ipv4.ip_unprivileged_port_start",
+    "value": "443"
+  }
+]
+</pre>
+</div>
+			</td>
+			<td>Safe sysctls applied to the DERP pod. @description `net.ipv4.ip_unprivileged_port_start=443` keeps the container non-root while still allowing DERP to bind `:443` for `certificates.mode=letsencrypt`.</td>
+		</tr>
+		<tr>
+			<td id="probes"><a href="./values.yaml#L172">probes</a></td>
 			<td>
 object
 </td>
@@ -929,7 +954,7 @@ object
 			<td>DERP health probe configuration. TCP probes are the safest default because kubelet probes the Pod IP directly.</td>
 		</tr>
 		<tr>
-			<td id="probes--liveness--enabled"><a href="./values.yaml#L170">probes.liveness.enabled</a></td>
+			<td id="probes--liveness--enabled"><a href="./values.yaml#L175">probes.liveness.enabled</a></td>
 			<td>
 bool
 </td>
@@ -943,7 +968,7 @@ true
 			<td>Enable liveness probe.</td>
 		</tr>
 		<tr>
-			<td id="probes--readiness--enabled"><a href="./values.yaml#L179">probes.readiness.enabled</a></td>
+			<td id="probes--readiness--enabled"><a href="./values.yaml#L184">probes.readiness.enabled</a></td>
 			<td>
 bool
 </td>
@@ -971,7 +996,7 @@ int
 			<td>Number of DERP pod replicas. This chart only supports a single replica.</td>
 		</tr>
 		<tr>
-			<td id="resources"><a href="./values.yaml#L188">resources</a></td>
+			<td id="resources"><a href="./values.yaml#L193">resources</a></td>
 			<td>
 object
 </td>
@@ -993,7 +1018,7 @@ object
 			<td>Resource requests and limits.</td>
 		</tr>
 		<tr>
-			<td id="runtimeClass"><a href="./values.yaml#L196">runtimeClass</a></td>
+			<td id="runtimeClass"><a href="./values.yaml#L201">runtimeClass</a></td>
 			<td>
 object
 </td>
@@ -1010,7 +1035,7 @@ object
 			<td>RuntimeClass names.</td>
 		</tr>
 		<tr>
-			<td id="securityContext"><a href="./values.yaml#L78">securityContext</a></td>
+			<td id="securityContext"><a href="./values.yaml#L83">securityContext</a></td>
 			<td>
 object
 </td>
@@ -1058,7 +1083,7 @@ object
   "https": {
     "enabled": true,
     "port": 443,
-    "targetPort": 8443
+    "targetPort": 443
   },
   "internalTrafficPolicy": "Cluster",
   "loadBalancerIP": "",
@@ -1203,11 +1228,11 @@ int
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-8443
+443
 </pre>
 </div>
 			</td>
-			<td>Container target port for HTTPS.</td>
+			<td>Container target port for HTTPS. `letsencrypt` requires DERP itself to listen on `443`.</td>
 		</tr>
 		<tr>
 			<td id="service--internalTrafficPolicy"><a href="./values.yaml#L29">service.internalTrafficPolicy</a></td>
@@ -1331,7 +1356,7 @@ int
 			<td>Container target port for STUN.</td>
 		</tr>
 		<tr>
-			<td id="tmpVolume"><a href="./values.yaml#L158">tmpVolume</a></td>
+			<td id="tmpVolume"><a href="./values.yaml#L163">tmpVolume</a></td>
 			<td>
 object
 </td>
@@ -1349,7 +1374,7 @@ object
 			<td>Temporary writable volume configuration for `/tmp`.</td>
 		</tr>
 		<tr>
-			<td id="tmpVolume--enabled"><a href="./values.yaml#L160">tmpVolume.enabled</a></td>
+			<td id="tmpVolume--enabled"><a href="./values.yaml#L165">tmpVolume.enabled</a></td>
 			<td>
 bool
 </td>
@@ -1363,7 +1388,7 @@ true
 			<td>Enable a writable `emptyDir` for `/tmp`.</td>
 		</tr>
 		<tr>
-			<td id="tmpVolume--mountPath"><a href="./values.yaml#L162">tmpVolume.mountPath</a></td>
+			<td id="tmpVolume--mountPath"><a href="./values.yaml#L167">tmpVolume.mountPath</a></td>
 			<td>
 string
 </td>
@@ -1377,7 +1402,7 @@ string
 			<td>Mount path for the tmp volume.</td>
 		</tr>
 		<tr>
-			<td id="tmpVolume--sizeLimit"><a href="./values.yaml#L164">tmpVolume.sizeLimit</a></td>
+			<td id="tmpVolume--sizeLimit"><a href="./values.yaml#L169">tmpVolume.sizeLimit</a></td>
 			<td>
 string
 </td>
@@ -1391,7 +1416,7 @@ string
 			<td>Optional tmp volume size limit.</td>
 		</tr>
 		<tr>
-			<td id="tolerations"><a href="./values.yaml#L236">tolerations</a></td>
+			<td id="tolerations"><a href="./values.yaml#L241">tolerations</a></td>
 			<td>
 list
 </td>
@@ -1440,9 +1465,10 @@ Autogenerated from chart metadata using [helm-docs](https://github.com/norwoodj/
 ### Important operational notes
 
 * This chart intentionally renders no `Ingress` and no `HTTPRoute`. `derper` must be exposed directly via the Kubernetes `Service`.
-* Default container ports are non-root friendly: `8443/tcp` for DERP and `8080/tcp` for HTTP. The Service maps them to `443` and `80`.
+* Default `letsencrypt` mode binds DERP directly on container port `443/tcp`; the chart keeps non-root by setting `net.ipv4.ip_unprivileged_port_start=443` instead of adding extra Linux capabilities.
+* Plain HTTP stays on `8080/tcp` by default and is exposed via Service port `80` for ACME HTTP-01.
 * The chart always passes `-c /var/lib/derper/derper.key` to preserve DERP node key behavior in non-root mode. Keep this path on persistent storage for stable node identity.
-* `certificates.mode=letsencrypt` requires direct reachability on TCP/80 and TCP/443.
+* `certificates.mode=letsencrypt` requires `derper` itself to listen on `:443`; mapping Service port `443` to a higher in-container port is not sufficient.
 * `certificates.mode=manual` mounts an existing secret so that DERP sees files as `/var/lib/derper/certs/<hostname>.crt` and `/var/lib/derper/certs/<hostname>.key`, matching upstream expectations.
 * `stun.enabled=false` is the intended default when STUN comes from an external `coturn` deployment.
 * `derper.verifyClientUrl` is the preferred admission path for Headscale in this repo. The chart intentionally does not expose `--verify-clients`, which would require a colocated `tailscaled`.
@@ -1483,14 +1509,14 @@ service:
   https:
     enabled: true
     port: 443
-    targetPort: 8443
+    targetPort: 443
 
 stun:
   enabled: false
 
 derper:
   hostname: relst01.codeadmin.de
-  addr: ":8443"
+  addr: ":443"
   httpPort: 8080
   configPath: /var/lib/derper/derper.key
   verifyClientUrl: https://canet.codeadmin.de/verify

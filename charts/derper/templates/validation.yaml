@@ -27,6 +27,12 @@
 {{- end -}}
 
 {{- $listenPort := regexFind "[0-9]+$" .Values.derper.addr -}}
+{{- $unprivilegedPortStart := 1024 -}}
+{{- range .Values.podSecurityContext.sysctls }}
+  {{- if eq .name "net.ipv4.ip_unprivileged_port_start" -}}
+    {{- $unprivilegedPortStart = int .value -}}
+  {{- end -}}
+{{- end -}}
 {{- if empty $listenPort -}}
 {{- fail "derper.addr must end with a TCP port, for example :8443." -}}
 {{- end -}}
@@ -43,16 +49,16 @@
 {{- fail "securityContext.readOnlyRootFilesystem=true requires tmpVolume.enabled=true." -}}
 {{- end -}}
 
-{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot (lt (int .Values.service.https.targetPort) 1024) -}}
-{{- fail "service.https.targetPort must be greater than 1023 when running derper as non-root." -}}
+{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot (lt (int .Values.service.https.targetPort) $unprivilegedPortStart) -}}
+{{- fail (printf "service.https.targetPort=%v requires either a port >= %v or podSecurityContext.sysctls net.ipv4.ip_unprivileged_port_start set low enough for non-root binding." .Values.service.https.targetPort $unprivilegedPortStart) -}}
 {{- end -}}
 
-{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot .Values.service.http.enabled (lt (int .Values.service.http.targetPort) 1024) -}}
-{{- fail "service.http.targetPort must be greater than 1023 when running derper as non-root." -}}
+{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot .Values.service.http.enabled (lt (int .Values.service.http.targetPort) $unprivilegedPortStart) -}}
+{{- fail (printf "service.http.targetPort=%v requires either a port >= %v or podSecurityContext.sysctls net.ipv4.ip_unprivileged_port_start set low enough for non-root binding." .Values.service.http.targetPort $unprivilegedPortStart) -}}
 {{- end -}}
 
-{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot .Values.stun.enabled (lt (int .Values.stun.targetPort) 1024) -}}
-{{- fail "stun.targetPort must be greater than 1023 when running derper as non-root." -}}
+{{- if and .Values.applySecurity .Values.securityContext.runAsNonRoot .Values.stun.enabled (lt (int .Values.stun.targetPort) $unprivilegedPortStart) -}}
+{{- fail (printf "stun.targetPort=%v requires either a port >= %v or podSecurityContext.sysctls net.ipv4.ip_unprivileged_port_start set low enough for non-root binding." .Values.stun.targetPort $unprivilegedPortStart) -}}
 {{- end -}}
 
 {{- if and .Values.service.http.enabled (eq (printf "%v" .Values.service.http.port) (printf "%v" .Values.service.https.port)) -}}
@@ -82,6 +88,15 @@
 {{- if eq .Values.certificates.mode "letsencrypt" -}}
   {{- if not .Values.service.http.enabled -}}
     {{- fail "certificates.mode=letsencrypt requires service.http.enabled=true so ACME HTTP-01 can succeed." -}}
+  {{- end -}}
+  {{- if ne $listenPort "443" -}}
+    {{- fail "certificates.mode=letsencrypt requires derper.addr to listen on :443. Service port mapping alone is not sufficient because derper only serves HTTPS/ACME certs from :443." -}}
+  {{- end -}}
+  {{- if ne (int .Values.service.https.targetPort) 443 -}}
+    {{- fail "certificates.mode=letsencrypt requires service.https.targetPort=443 so the container listens on :443." -}}
+  {{- end -}}
+  {{- if ne (int .Values.service.http.port) 80 -}}
+    {{- fail "certificates.mode=letsencrypt requires service.http.port=80 so ACME HTTP-01 remains reachable externally." -}}
   {{- end -}}
 {{- else if eq .Values.certificates.mode "manual" -}}
   {{- if empty .Values.certificates.manual.existingSecret -}}

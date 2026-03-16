@@ -45,8 +45,8 @@ service:
     enabled: true
     # -- Service port for HTTPS.
     port: 443
-    # -- Container target port for HTTPS.
-    targetPort: 8443
+    # -- Container target port for HTTPS. `letsencrypt` requires DERP itself to listen on `443`.
+    targetPort: 443
 
 # -- Integrated STUN listener configuration. Keep disabled when STUN is provided by an external Coturn deployment.
 stun:
@@ -73,6 +73,11 @@ applyHealthChecks: true
 # -- Pod-level security context for DERP pods.
 podSecurityContext:
   fsGroup: 65532
+  # -- Safe sysctls applied to the DERP pod.
+  # @description `net.ipv4.ip_unprivileged_port_start=443` keeps the container non-root while still allowing DERP to bind `:443` for `certificates.mode=letsencrypt`.
+  sysctls:
+    - name: net.ipv4.ip_unprivileged_port_start
+      value: "443"
 
 # -- Container-level security context for the DERP container.
 securityContext:
@@ -91,8 +96,8 @@ securityContext:
 derper:
   # -- Public DERP hostname used for TLS and DERP map entries.
   hostname: derp.example.com
-  # -- DERP HTTPS listen address passed to `-a`.
-  addr: ":8443"
+  # -- DERP HTTPS listen address passed to `-a`. `letsencrypt` requires `:443`.
+  addr: ":443"
   # -- DERP HTTP listen port passed to `-http-port` when `service.http.enabled=true`.
   httpPort: 8080
   # -- Persistent DERP config file passed to `-c`.
