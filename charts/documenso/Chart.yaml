@@ -3,9 +3,9 @@ name: documenso
 description: A Helm chart for deploying Documenso on Kubernetes.
 type: application
 # renovate: bumpVersion
-version: 0.1.0
+version: 0.1.1
 # renovate: image=documenso/documenso
-appVersion: "v2.8.0"
+appVersion: "v2.8.1"
 kubeVersion: ">=1.24.0"
 home: https://github.com/CodeAdminDe/helm-charts
 keywords:
@@ -31,4 +31,4 @@ annotations:
   securityContext: "compatible"
   images: |
     - name: documenso
-      image: documenso/documenso:v2.8.0
+      image: documenso/documenso:v2.8.1
