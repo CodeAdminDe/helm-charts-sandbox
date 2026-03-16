@@ -2,7 +2,7 @@
 
 # headscale
 
-![Version: 0.1.7](https://img.shields.io/badge/Version-0.1.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.28.0](https://img.shields.io/badge/AppVersion-0.28.0-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.28.0](https://img.shields.io/badge/AppVersion-0.28.0-informational?style=flat-square)
 
 A Helm chart for an easier headscale (https://headscale.net) deployment on Kubernetes. Please note that this is a private helm chart and not directly or indirectly affiliated with headscale or its authors.
 
@@ -1647,7 +1647,7 @@ object
   "image": {
     "pullPolicy": "IfNotPresent",
     "repository": "ghcr.io/gurucomputing/headscale-ui",
-    "tag": "2025.08.23"
+    "tag": "2026.03.17"
   },
   "ingress": {
     "annotations": {},
@@ -2749,7 +2749,7 @@ object
 {
   "pullPolicy": "IfNotPresent",
   "repository": "ghcr.io/gurucomputing/headscale-ui",
-  "tag": "2025.08.23"
+  "tag": "2026.03.17"
 }
 </pre>
 </div>
@@ -2792,7 +2792,7 @@ string
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-"2025.08.23"
+"2026.03.17"
 </pre>
 </div>
 			</td>
