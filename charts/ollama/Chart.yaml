@@ -3,9 +3,9 @@ name: ollama
 description: A Helm chart for an easier ollama (https://ollama.com) deployment on k8s. Please note that this is a private helm chart and not directly or indirectly affiliated with ollama or its authors.
 type: application
 # renovate: bumpVersion
-version: "0.20.0"
+version: "0.20.1"
 # renovate: image=ollama/ollama
-appVersion: "0.18.0"
+appVersion: "0.18.1"
 home: https://github.com/CodeAdminDe/helm-charts
 keywords:
   - ollama
