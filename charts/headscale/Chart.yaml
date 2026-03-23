@@ -3,7 +3,7 @@ name: headscale
 description: A Helm chart for an easier headscale (https://headscale.net) deployment on Kubernetes. Please note that this is a private helm chart and not directly or indirectly affiliated with headscale or its authors.
 type: application
 # renovate: bumpVersion
-version: 1.0.0
+version: 0.2.0
 # renovate: image=headscale/headscale
 appVersion: "0.28.0"
 home: https://github.com/CodeAdminDe/helm-charts
