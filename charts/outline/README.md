@@ -2,7 +2,7 @@
 
 # outline
 
-![Version: 1.12.3](https://img.shields.io/badge/Version-1.12.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.5.0](https://img.shields.io/badge/AppVersion-1.5.0-informational?style=flat-square)
+![Version: 1.12.4](https://img.shields.io/badge/Version-1.12.4-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 1.5.0](https://img.shields.io/badge/AppVersion-1.5.0-informational?style=flat-square)
 
 A Helm chart for an easier outline (https://getoutline.com) deployment at kubernetes.
 
@@ -18,7 +18,7 @@ A Helm chart for an easier outline (https://getoutline.com) deployment at kubern
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://charts.bitnami.com/bitnami | postgresql(postgresql) | 18.5.11 |
+| https://charts.bitnami.com/bitnami | postgresql(postgresql) | 18.5.12 |
 | https://codeadminde.github.io/helm-charts | libchart-cnps(libchart-cnps) | 0.2.1 |
 | https://codeadminde.github.io/helm-charts | redis(redis) | 0.4.1 |
 
