@@ -3,7 +3,7 @@ name: headscale
 description: A Helm chart for an easier headscale (https://headscale.net) deployment on Kubernetes. Please note that this is a private helm chart and not directly or indirectly affiliated with headscale or its authors.
 type: application
 # renovate: bumpVersion
-version: 0.1.7
+version: 0.2.0
 # renovate: image=headscale/headscale
 appVersion: "0.28.0"
 home: https://github.com/CodeAdminDe/helm-charts
@@ -33,6 +33,6 @@ annotations:
     - name: headscale
       image: headscale/headscale:0.28.0
     - name: headscale-ui
-      image: ghcr.io/gurucomputing/headscale-ui:2025.08.23
+      image: ghcr.io/gurucomputing/headscale-ui:2026.03.17
     - name: headplane
       image: ghcr.io/tale/headplane:0.6.2

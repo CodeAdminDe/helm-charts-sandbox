@@ -219,7 +219,7 @@ ui:
     # -- Image pull policy.
     pullPolicy: IfNotPresent
     # -- Image tag.
-    tag: "2025.08.23"
+    tag: "2026.03.17"
   # -- Additional environment variables for `headscale-ui` container.
   env: {}
   # -- `headplane` specific settings (https://github.com/tale/headplane).
