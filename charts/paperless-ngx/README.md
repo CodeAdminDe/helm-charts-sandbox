@@ -2,7 +2,7 @@
 
 # paperless-ngx
 
-![Version: 0.2.9](https://img.shields.io/badge/Version-0.2.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.20.11](https://img.shields.io/badge/AppVersion-2.20.11-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.20.11](https://img.shields.io/badge/AppVersion-2.20.11-informational?style=flat-square)
 
 A Helm chart for deploying Paperless-ngx on Kubernetes.
 
@@ -3404,7 +3404,7 @@ object
   "image": {
     "pullPolicy": "IfNotPresent",
     "repository": "docker.io/apache/tika",
-    "tag": "3.2.3.0-full"
+    "tag": "3.3.0.0-full"
   },
   "resources": {},
   "securityContext": {
@@ -3490,7 +3490,7 @@ string
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-"3.2.3.0-full"
+"3.3.0.0-full"
 </pre>
 </div>
 			</td>
