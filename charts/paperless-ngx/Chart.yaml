@@ -3,7 +3,7 @@ name: paperless-ngx
 description: A Helm chart for deploying Paperless-ngx on Kubernetes.
 type: application
 # renovate: bumpVersion
-version: 0.2.9
+version: 0.3.0
 # renovate: image=ghcr.io/paperless-ngx/paperless-ngx
 appVersion: "2.20.11"
 kubeVersion: ">=1.24.0"
@@ -41,4 +41,4 @@ annotations:
     - name: gotenberg
       image: docker.io/gotenberg/gotenberg:8.27
     - name: tika
-      image: docker.io/apache/tika:3.2.3.0-full
+      image: docker.io/apache/tika:3.3.0.0-full
