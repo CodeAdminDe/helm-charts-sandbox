@@ -3,9 +3,9 @@ name: anything-llm
 description: A Helm chart for deploying AnythingLLM on Kubernetes.
 type: application
 # renovate: bumpVersion
-version: 0.1.0
+version: 0.1.1
 # renovate: image=mintplexlabs/anythingllm
-appVersion: "1.11.1"
+appVersion: "1.11.2"
 kubeVersion: ">=1.24.0"
 home: https://github.com/CodeAdminDe/helm-charts
 icon: https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/frontend/public/favicon.png
@@ -32,6 +32,6 @@ annotations:
   securityContext: "compatible"
   images: |
     - name: anything-llm
-      image: mintplexlabs/anythingllm:1.11.1
+      image: mintplexlabs/anythingllm:1.11.2
     - name: anything-llm-postgresql-variant
       image: mintplexlabs/anythingllm:pg-1.11.1
