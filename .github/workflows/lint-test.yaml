@@ -4,13 +4,22 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'charts/**'
+      - '.github/scripts/**'
+      - '.github/workflows/lint-test.yaml'
+      - '.pre-commit-config.yaml'
   push:
     branches:
       - main
+    paths:
+      - 'charts/**'
+      - '.github/scripts/**'
+      - '.github/workflows/lint-test.yaml'
+      - '.pre-commit-config.yaml'
 
 jobs:
   lint-test:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !github.event.action == 'opened')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,7 +53,20 @@ jobs:
           changed=$(ct list-changed --target-branch ${{ github.event.repository.default_branch }})
           if [[ -n "$changed" ]]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "charts<<EOF"
+              echo "$changed"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Validate Helm dependencies
+        if: steps.list-changed.outputs.changed == 'true'
+        env:
+          CHANGED_CHARTS: ${{ steps.list-changed.outputs.charts }}
+        run: |
+          mapfile -t charts <<< "$CHANGED_CHARTS"
+          bash .github/scripts/validate-helm-dependencies.sh "${charts[@]}"
 
       - name: Run chart-testing (lint)
         if: steps.list-changed.outputs.changed == 'true'

@@ -4,6 +4,14 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - 'charts/**'
+      - '.github/workflows/gen-docs.yaml'
+      - '.pre-commit-config.yaml'
+
+concurrency:
+  group: gen-docs-${{ github.event.pull_request.number || github.head_ref || github.run_id }}
+  cancel-in-progress: true
 
 jobs:
   gen-docs:
@@ -35,8 +43,8 @@ jobs:
 
       - name: Commit and push docs to PR
         run: |
-            git add .
+            git add charts/*/README.md
             if ! git diff-index --quiet HEAD; then
               git commit -m "Update helm-docs"
-              git push
+              git push origin HEAD:${{ github.head_ref }}
             fi

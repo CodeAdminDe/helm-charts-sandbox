@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'charts/**'
+      - '.gh-pages/**'
+      - '.github/scripts/**'
+      - '.github/workflows/release.yaml'
+
+concurrency:
+  group: release-charts-main
+  cancel-in-progress: false
 
 jobs:
   release:
@@ -24,12 +33,8 @@ jobs:
       # https://github.com/helm/chart-releaser?tab=readme-ov-file#dealing-with-charts-that-have-dependencies
       - name: Set up Helm
         uses: azure/setup-helm@v5.0.0
-      - name: Add dependencies
-        run: |
-          helm repo add bitnami https://charts.bitnami.com/bitnami
-          helm repo add supabase https://codeadminde.github.io/supabase-kubernetes
-          helm repo add codeadminde https://codeadminde.github.io/helm-charts
-          helm repo add mastodon https://mastodon.github.io/helm-charts/
+      - name: Configure Helm repositories
+        run: bash .github/scripts/validate-helm-dependencies.sh --repos-only
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
@@ -57,7 +62,7 @@ jobs:
 
       - name: Extract Helm Charts
         id: extract_chart_entries
-        uses: mikefarah/yq@master
+        uses: mikefarah/yq@v4.52.4
         with:
             cmd: cat gh-pages/index.yaml | yq -o=json eval '.entries | to_entries'
 
