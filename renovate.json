@@ -1,3 +1,164 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":configMigration",
+    "helpers:pinGitHubActionDigests",
+    "abandonments:recommended"
+  ],
+  "branchPrefix": "renovate/",
+  "onboarding": true,
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "prConcurrentLimit": 3,
+  "branchConcurrentLimit": 3,
+  "commitHourlyLimit": 2,
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "datasourceTemplate": "docker",
+      "managerFilePatterns": [
+        "/(^|/)Chart\\.yaml$/"
+      ],
+      "matchStrings": [
+        "#\\s?renovate:?\\s*image=(?<depName>.*?)\\s*(appVersion|version):\\s?\\\"?(?<currentValue>[\\w+\\.\\-]*)\\\"?"
+      ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "docker",
+      "managerFilePatterns": [
+        "/(^|/)Chart\\.yaml$/"
+      ],
+      "matchStrings": [
+        "image:\\s+['\\\"]?(?<depName>[\\w./:-]+):(?<currentValue>[\\w.+\\-]+)['\\\"]?"
+      ]
+    },
+    {
+      "customType": "regex",
+      "datasourceTemplate": "helm",
+      "managerFilePatterns": [
+        "/(^|/)Chart\\.yaml$/"
+      ],
+      "matchStrings": [
+        "#\\s?renovate:?\\s*chart=(?<depName>.*?)\\s+repository=(?<registryUrl>.*?)\\s*(appVersion|version):\\s?\\\"?(?<currentValue>[\\w+\\.\\-]*)\\\"?"
+      ]
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "envoy-gateway",
+      "groupSlug": "envoy-gateway-upstream",
+      "matchFileNames": [
+        "charts/envoy-gateway/**"
+      ],
+      "matchPackageNames": [
+        "gateway-helm",
+        "envoyproxy/gateway",
+        "envoyproxy/ratelimit"
+      ]
+    },
+    {
+      "groupName": "envoy-gateway-dataplane-policies",
+      "groupSlug": "envoy-gateway-dataplane-policies-upstream",
+      "matchFileNames": [
+        "charts/envoy-gateway-dataplane-policies/**"
+      ],
+      "matchPackageNames": [
+        "envoyproxy/gateway"
+      ]
+    },
+    {
+      "groupName": "envoy-gateway-instance",
+      "groupSlug": "envoy-gateway-instance-upstream",
+      "matchFileNames": [
+        "charts/envoy-gateway-instance/**"
+      ],
+      "matchPackageNames": [
+        "envoyproxy/gateway"
+      ]
+    },
+    {
+      "groupName": "envoy-gateway-instance-policies",
+      "groupSlug": "envoy-gateway-instance-policies-upstream",
+      "matchFileNames": [
+        "charts/envoy-gateway-instance-policies/**"
+      ],
+      "matchPackageNames": [
+        "envoyproxy/gateway"
+      ]
+    },
+    {
+      "groupName": "kasmweb",
+      "groupSlug": "kasmweb-upstream",
+      "matchPackageNames": [
+        "kasmweb/**"
+      ],
+      "matchFileNames": [
+        "charts/kasm-agent/**",
+        "charts/kasm-ws/**"
+      ]
+    },
+    {
+      "groupName": "mastodon",
+      "groupSlug": "mastodon-upstream",
+      "matchPackageNames": [
+        "ghcr.io/mastodon/*",
+        "mastodon"
+      ],
+      "matchFileNames": [
+        "charts/mastodon/**"
+      ]
+    },
+    {
+      "groupName": "netbirdio/netbird-agent",
+      "matchPackageNames": [
+        "netbirdio/**"
+      ],
+      "matchFileNames": [
+        "charts/netbird-agent/**"
+      ]
+    },
+    {
+      "groupName": "netbirdio/netbird-management",
+      "matchPackageNames": [
+        "netbirdio/**"
+      ],
+      "matchFileNames": [
+        "charts/netbird-management/**"
+      ]
+    },
+    {
+      "matchFileNames": [
+        "charts/**"
+      ],
+      "bumpVersions": [
+        {
+          "filePatterns": [
+            "{{packageFileDir}}/Chart.{yaml,yml}"
+          ],
+          "matchStrings": [
+            "#\\s?renovate:?\\s*bumpVersion\\s*(appVersion|version):\\s?\\\"?(?<version>[\\w+\\.\\-]*)\\\"?"
+          ],
+          "bumpType": "{{#if isMajor}}major{{else}}{{#if isMinor}}minor{{else}}patch{{/if}}{{/if}}"
+        }
+      ]
+    },
+    {
+      "matchFileNames": [
+        "**/bind9-hidden-primary/Chart.yaml"
+      ],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "major",
+        "minor"
+      ],
+      "enabled": false
+    }
+  ]
 }

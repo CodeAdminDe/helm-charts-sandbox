@@ -30,5 +30,5 @@ jobs:
           RENOVATE_REPOSITORIES: ${{ github.repository }}
           RENOVATE_PLATFORM_COMMIT: "true"
         with:
-          configurationFile: .renovate-config.json
+          configurationFile: renovate.json
           token: '${{ steps.get_token.outputs.token }}'
