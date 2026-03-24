@@ -17,5 +17,5 @@ data:
 
     echo "Starting outline ..."
 
-    exec /usr/local/bin/yarn start
+    exec /usr/local/bin/node build/server/index.js
 {{- end }}
