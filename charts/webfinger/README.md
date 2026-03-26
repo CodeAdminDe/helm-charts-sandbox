@@ -12,7 +12,7 @@ A Helm chart for an easy webfinger deployment at kubernetes.
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Frederic Roggon | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
+| CodeAdminDe | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
 
 ## TL;DR
 
