@@ -15,5 +15,7 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "webfinger.fullname" . }}:{{ .Values.service.port }}']
+      args:
+        - '-qO-'
+        - 'http://{{ include "webfinger.fullname" . }}:{{ .Values.service.port }}/.well-known/webfinger?resource={{ .Values.webfingerRessource }}'
   restartPolicy: Never

@@ -93,7 +93,7 @@ runtimeClass:
 
 # -- The following minimal required env vars are necessary to deploy the webfinger image successfully.
 # See the upstream docs for further informations. You'll find these here: https://github.com/CodeAdminDe/webfinger
-webfingerIssuerUrl: "example.org"
+webfingerIssuerUrl: "https://example.org"
 webfingerRessource: "acct:user@example.org"
 webfingerAllowDomainWildcard: "false"
 
@@ -144,14 +144,14 @@ ingress:
         #       name: another-service
         #       port:
         #         number: 8080
-  #tls:
+  # tls:
   tls:
     - hosts:
         - chart-example.local
-      #secretName: chart-example-tls
+      # secretName: chart-example-tls
       # -- secretName of the certificate to use.
       # When providing an empty string as secretNmae, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
-      secretName: "" #When providing an empty string as secretName, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
+      secretName: ""  # When providing an empty string as secretName, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
 
 # -- Specify default resources (not recommended, see values.yaml)
 resources: {}

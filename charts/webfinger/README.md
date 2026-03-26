@@ -2,7 +2,7 @@
 
 # webfinger
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square)
+![Version: 0.5.1](https://img.shields.io/badge/Version-0.5.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.10.0](https://img.shields.io/badge/AppVersion-0.10.0-informational?style=flat-square)
 
 A Helm chart for an easy webfinger deployment at kubernetes.
 
@@ -12,7 +12,7 @@ A Helm chart for an easy webfinger deployment at kubernetes.
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Frederic Roggon | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
+| CodeAdminDe | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
 
 ## TL;DR
 
@@ -702,7 +702,7 @@ string
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-"example.org"
+"https://example.org"
 </pre>
 </div>
 			</td>
