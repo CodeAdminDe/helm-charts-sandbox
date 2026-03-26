@@ -1,0 +1,1026 @@
+apiVersion: v1
+entries:
+  actual-budget:
+  - annotations:
+      category: Finance
+      images: |
+        - name: actual-budget
+          image: actualbudget/actual-server:26.3.0
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: 26.3.0
+    created: "2026-03-26T17:22:27.533214439Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for actual-budget deployment on Kubernetes.
+    digest: d2e9c7887c08c1a740cc7c002f0eba356c748f022a8206eb7ed617510745e024
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - actual-budget
+    - finance
+    - local-first
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: actual-budget
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/actual-budget-0.1.0/actual-budget-0.1.0.tgz
+    version: 0.1.0
+  agent-zero:
+  - annotations:
+      category: AI
+      images: |
+        - name: agent-zero
+          image: agent0ai/agent-zero:v0.9.8.2
+        - name: netbird-sidecar
+          image: netbirdio/netbird:0.66.3-rootless
+        - name: tailscale-sidecar
+          image: ghcr.io/tailscale/tailscale:v1.94.2
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v0.9.8.2
+    created: "2026-03-26T17:22:27.684890943Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying Agent Zero (AI Operating System) on Kubernetes.
+    digest: fb1d5852688be0af43dae5ab6240d6eb2a188f0e7e1f47fee1ee13045f49b9c1
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - agent-zero
+    - ai
+    - llm
+    - mcp
+    - automation
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: agent-zero
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/agent-zero-0.1.4/agent-zero-0.1.4.tgz
+    version: 0.1.4
+  anything-llm:
+  - annotations:
+      category: AI
+      images: |
+        - name: anything-llm
+          image: mintplexlabs/anythingllm:1.11.2
+        - name: anything-llm-postgresql-variant
+          image: mintplexlabs/anythingllm:pg-1.11.1
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: 1.11.2
+    created: "2026-03-26T17:22:27.821945766Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying AnythingLLM on Kubernetes.
+    digest: 070807853f42c2f525ccda6e36d230bb2175fec331b1c49e0fbf1f7ec120de08
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://raw.githubusercontent.com/Mintplex-Labs/anything-llm/master/frontend/public/favicon.png
+    keywords:
+    - anythingllm
+    - anything-llm
+    - ai
+    - llm
+    - rag
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: anything-llm
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/anything-llm-0.1.1/anything-llm-0.1.1.tgz
+    version: 0.1.1
+  bind9-hidden-primary:
+  - apiVersion: v2
+    appVersion: "9.20"
+    created: "2026-03-26T17:22:27.997364118Z"
+    description: A Helm chart for bind9 to use as hidden primary, based on the offical
+      Docker Image by InternetSystemsConsortium (ISC)
+    digest: a5657b8d8ae8c9b29125689ccc47d43005ad0ad4c0af012693cd4032dd9b7552
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - nameserver
+    - bind9
+    - hidden-primary
+    - domain-name-system
+    - dns
+    - helm
+    - chart
+    - kubernetes
+    - infrastructure
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: bind9-hidden-primary
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/bind9-hidden-primary-0.4.3/bind9-hidden-primary-0.4.3.tgz
+    version: 0.4.3
+  coder:
+  - annotations:
+      category: Developer Tools
+      images: |
+        - name: coder
+          image: ghcr.io/coder/coder:v2.31.5
+      securityContext: required
+    apiVersion: v2
+    appVersion: v2.31.5
+    created: "2026-03-26T17:22:28.171044796Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying Coder on Kubernetes.
+    digest: 5d53d6feb3fe6c4424b0e59cee93e7f497abd1eebbf411666953e7ec84bc6391
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - coder
+    - development
+    - workspaces
+    - ide
+    - cnpg
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: coder
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/coder-0.2.0/coder-0.2.0.tgz
+    version: 0.2.0
+  coturn-server:
+  - annotations:
+      category: Networking
+      kubeVersion: '>=1.33.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 4.9.0
+    created: "2026-03-26T17:22:28.326632269Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier coturn deployment at kubernetes.
+    digest: 656dbc0b3a34b5cd90268b23b36b4dbf8b646bd99790c4c03f9eccdee5455c13
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - coturn
+    - STUN
+    - relay
+    - nat
+    - cloud-native
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: coturn-server
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/coturn-server-0.4.0/coturn-server-0.4.0.tgz
+    version: 0.4.0
+  derper:
+  - annotations:
+      category: Networking
+      kubeVersion: '>=1.24.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 1.94.2
+    created: "2026-03-26T17:22:28.515355106Z"
+    description: A Helm chart for running a Tailscale DERP relay on Kubernetes.
+    digest: 891d329ddb1ae181e38769c43473af635b96efef0bcaad8075371f6ba35e5fba
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - derper
+    - tailscale
+    - headscale
+    - relay
+    - networking
+    - cloud-native
+    - helm
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: derper
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/derper-0.1.1/derper-0.1.1.tgz
+    version: 0.1.1
+  documenso:
+  - annotations:
+      category: Productivity
+      images: |
+        - name: documenso
+          image: documenso/documenso:v2.8.1
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v2.8.1
+    created: "2026-03-26T17:22:28.628366726Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying Documenso on Kubernetes.
+    digest: 9531e0666ad1d689bffa7d685c8d38b76a517ab0a3badecb24c47a97949f6ec7
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - documenso
+    - documents
+    - signatures
+    - contracts
+    - productivity
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: documenso
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/documenso-0.1.1/documenso-0.1.1.tgz
+    version: 0.1.1
+  envoy-gateway:
+  - annotations:
+      category: Networking
+      images: |
+        - name: envoy-gateway
+          image: envoyproxy/gateway:v1.7.1
+        - name: ratelimit
+          image: envoyproxy/ratelimit:3fb70258
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v1.7.1
+    created: "2026-03-26T17:22:28.803769262Z"
+    dependencies:
+    - alias: envoy-gateway
+      condition: envoy-gateway.enabled
+      name: gateway-helm
+      repository: oci://docker.io/envoyproxy
+      version: 1.7.1
+    description: A Helm chart for deploying Envoy Gateway (Gateway API implementation)
+      on Kubernetes.
+    digest: a9691dd5c2ccbb550db8a9207c32c1bb299498194ad4bf429459b8f7a5492404
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://raw.githubusercontent.com/envoyproxy/gateway/main/site/assets/icons/logo.svg
+    keywords:
+    - envoy-gateway
+    - gateway-api
+    - envoy
+    - kubernetes
+    - ingress
+    - networking
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: envoy-gateway
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/envoy-gateway-0.4.5/envoy-gateway-0.4.5.tgz
+    version: 0.4.5
+  envoy-gateway-dataplane-policies:
+  - annotations:
+      category: Networking
+      securityContext: not-applicable
+    apiVersion: v2
+    appVersion: v1.7.1
+    created: "2026-03-26T17:22:28.943129998Z"
+    description: A Helm chart for Envoy Gateway dataplane CiliumNetworkPolicies on
+      Kubernetes.
+    digest: ad1d6ea80235971c8d0c6bc63c7fdaea6ed4f5e6ce66f0780f237b6e74a57098
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://raw.githubusercontent.com/envoyproxy/gateway/main/site/assets/icons/logo.svg
+    keywords:
+    - envoy-gateway
+    - gateway-api
+    - cilium
+    - network-policy
+    - dataplane
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: envoy-gateway-dataplane-policies
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/envoy-gateway-dataplane-policies-0.2.3/envoy-gateway-dataplane-policies-0.2.3.tgz
+    version: 0.2.3
+  envoy-gateway-instance:
+  - annotations:
+      category: Networking
+      securityContext: not-applicable
+    apiVersion: v2
+    appVersion: v1.7.1
+    created: "2026-03-26T17:22:29.112729683Z"
+    description: A Helm chart for deploying Envoy Gateway Gateway and EnvoyProxy instances
+      on Kubernetes.
+    digest: 4758c45e2297b3ddb97b692687afff15759ccf20f7a6537967bb1c784ad06092
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://raw.githubusercontent.com/envoyproxy/gateway/main/site/assets/icons/logo.svg
+    keywords:
+    - envoy-gateway
+    - gateway-api
+    - envoyproxy
+    - gateway
+    - ingress
+    - networking
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: envoy-gateway-instance
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/envoy-gateway-instance-0.1.1/envoy-gateway-instance-0.1.1.tgz
+    version: 0.1.1
+  envoy-gateway-instance-policies:
+  - annotations:
+      category: Networking
+      securityContext: not-applicable
+    apiVersion: v2
+    appVersion: v1.7.1
+    created: "2026-03-26T17:22:29.273956774Z"
+    description: A Helm chart for Envoy Gateway Gateway-instance policy resources
+      on Kubernetes.
+    digest: dd20c170e9aa6ea86d36e4f78c17848c3c7fbc087c71b2030026af222c36feea
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://raw.githubusercontent.com/envoyproxy/gateway/main/site/assets/icons/logo.svg
+    keywords:
+    - envoy-gateway
+    - gateway-api
+    - policy
+    - security
+    - oidc
+    - oauth
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: envoy-gateway-instance-policies
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/envoy-gateway-instance-policies-0.1.2/envoy-gateway-instance-policies-0.1.2.tgz
+    version: 0.1.2
+  garage:
+  - annotations:
+      category: Storage
+      images: |
+        - name: garage
+          image: dxflrs/garage:v2.2.0
+      kubeVersion: '>=1.24.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: v2.2.0
+    created: "2026-03-26T17:22:29.449626826Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier Garage (https://garagehq.deuxfleurs.fr)
+      deployment on Kubernetes. Please note that this is a private helm chart and
+      not directly or indirectly affiliated with Garage or its authors.
+    digest: 7299d9036d37bebcb286b58736eea6a9b51cd9c08c07f7fc0860a72b5695bab8
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - garage
+    - s3
+    - object-storage
+    - storage
+    - cloud-native
+    - helm
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: garage
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/garage-0.1.1/garage-0.1.1.tgz
+    version: 0.1.1
+  headscale:
+  - annotations:
+      category: Networking
+      images: |
+        - name: headscale
+          image: headscale/headscale:0.28.0
+        - name: headscale-ui
+          image: ghcr.io/gurucomputing/headscale-ui:2026.03.17
+        - name: headplane
+          image: ghcr.io/tale/headplane:0.6.2
+      kubeVersion: '>=1.24.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 0.28.0
+    created: "2026-03-26T17:22:29.668970414Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier headscale (https://headscale.net) deployment
+      on Kubernetes. Please note that this is a private helm chart and not directly
+      or indirectly affiliated with headscale or its authors.
+    digest: fe6dc3267a649485eac952f188cd13c2c3d807bf6923234d91a9a7d10535cdc3
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - headscale
+    - tailscale
+    - vpn
+    - mesh-network
+    - networking
+    - cloud-native
+    - helm
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: headscale
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/headscale-0.2.0/headscale-0.2.0.tgz
+    version: 0.2.0
+  kasm-agent:
+  - annotations:
+      category: Security
+      kubeVersion: '>=1.33.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 1.18.1
+    created: "2026-03-26T17:22:29.805684647Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying a Kasm agent workload in Kubernetes (advanced/unsupported
+      static-agent model).
+    digest: 8de16b9572618560b5fbc78eef188d0b12cfe89fad4a480710507105f209ddb5
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - kasm
+    - kasm-workspaces
+    - agent
+    - remote-browser
+    - workspace
+    - security
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: kasm-agent
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/kasm-agent-0.1.0/kasm-agent-0.1.0.tgz
+    version: 0.1.0
+  kasm-ws:
+  - annotations:
+      category: Virtual Desktop
+      images: |
+        - name: kasm-api
+          image: kasmweb/api:1.18.1
+        - name: kasm-manager
+          image: kasmweb/manager:1.18.1
+        - name: kasm-db
+          image: kasmweb/postgres:1.18.1
+        - name: kasm-proxy
+          image: kasmweb/proxy:1.18.1
+        - name: kasm-guac
+          image: kasmweb/kasm-guac:1.18.1
+        - name: rdp-gateway
+          image: kasmweb/rdp-gateway:1.18.1
+        - name: rdp-https-gateway
+          image: kasmweb/rdp-https-gateway:1.18.1
+      kubeVersion: '>=1.24.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 1.18.1
+    created: "2026-03-26T17:22:29.945726135Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier Kasm Workspaces (https://kasm.com) deployment
+      on Kubernetes. Please note that this is a private helm chart and not directly
+      or indirectly affiliated with Kasm Technologies, Inc. or its authors.
+    digest: f41ba1b7456bec8e5684b8ee808afe42580b90532c8eeea9429593c4c9b5c862
+    home: https://github.com/CodeAdminDe/helm-charts
+    icon: https://kasm-static-content.s3.amazonaws.com/icons/kasm-logo-small.png
+    keywords:
+    - kasm
+    - vdi
+    - workspaces
+    - workspace
+    - browser-isolation
+    - remote-desktop
+    - cloud-native
+    - helm
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: kasm-ws
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/kasm-ws-0.1.0/kasm-ws-0.1.0.tgz
+    version: 0.1.0
+  libchart-cnps:
+  - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2026-03-26T17:22:30.056734744Z"
+    description: A (experimental) Helm chart of cilium network policies for usage
+      as a library chart.
+    digest: 062e93cd4294e62b96877d324cbecf01510320e253363b13f42954045783e9ab
+    name: libchart-cnps
+    type: library
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/libchart-cnps-0.2.1/libchart-cnps-0.2.1.tgz
+    version: 0.2.1
+  local-agi:
+  - annotations:
+      category: AI
+      images: |
+        - name: local-agi
+          image: quay.io/mudler/localagi:v2.8.1
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v2.8.1
+    created: "2026-03-26T17:22:30.231680075Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying LocalAGI on Kubernetes.
+    digest: f6b98e58bbdcfe27c6e2db463b87819900bd96be88ecb3da752ed60ec7dc55a3
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - local-agi
+    - localai
+    - ai
+    - agent
+    - llm
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: local-agi
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/local-agi-0.1.2/local-agi-0.1.2.tgz
+    version: 0.1.2
+  local-recall:
+  - annotations:
+      category: AI
+      images: |
+        - name: local-recall
+          image: quay.io/mudler/localrecall:v0.5.8
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v0.5.8
+    created: "2026-03-26T17:22:30.506822572Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying LocalRecall on Kubernetes.
+    digest: 4d97ef4cd9c23eef88f196ea1c781196368da479bb1a0686e530ac77419fbe88
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - local-recall
+    - rag
+    - vector-db
+    - ai
+    - localai
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: local-recall
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/local-recall-0.1.3/local-recall-0.1.3.tgz
+    version: 0.1.3
+  mastodon:
+  - annotations:
+      category: Social
+      images: |
+        - name: mastodon
+          image: ghcr.io/mastodon/mastodon:v4.5.7
+        - name: mastodon-streaming
+          image: ghcr.io/mastodon/mastodon-streaming:v4.5.7
+        - name: redis
+          image: library/redis:8.6.1
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: v4.5.7
+    created: "2026-03-26T17:22:30.725480939Z"
+    dependencies:
+    - alias: upstream
+      condition: upstream.enabled
+      name: mastodon
+      repository: https://mastodon.github.io/helm-charts
+      version: 0.3.0
+    - alias: redis
+      condition: redis.enabled
+      name: redis
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/redis
+      version: 0.4.1
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying Mastodon on Kubernetes with repo-aligned
+      secure defaults and integrations.
+    digest: dbd96659be882094e436b9d0b1ce7a542dde26474bcaa2a7c8f86930a21943cd
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - mastodon
+    - activitypub
+    - social
+    - redis
+    - postgresql
+    - cnpg
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: mastodon
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/mastodon-0.1.2/mastodon-0.1.2.tgz
+    version: 0.1.2
+  netbird-agent:
+  - annotations:
+      category: Networking
+      kubeVersion: '>=1.33.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 0.66.3
+    created: "2026-03-26T17:22:31.049965364Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier NetBird agent (https://netbird.io) deployment
+      at kubernetes.
+    digest: 416cbb3ac5a41512205d3f06baf8b855a053735878d4c4fee12884b04748c7ee
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - netbird
+    - vpn
+    - mesh-network
+    - wireguard
+    - zero-trust
+    - sso
+    - postgresql
+    - cnpg
+    - cloud-native
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: netbird-agent
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/netbird-agent-0.11.3/netbird-agent-0.11.3.tgz
+    version: 0.11.3
+  netbird-management:
+  - annotations:
+      category: Networking
+      kubeVersion: '>=1.33.0'
+      securityContext: required
+    apiVersion: v2
+    appVersion: 0.66.3
+    created: "2026-03-26T17:22:31.198924924Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier NetBird management stack (https://netbird.io)
+      deployment at kubernetes.
+    digest: 8eb60b38f9502aafb3c6294a66921733c7421caec86607719003b9587364dd19
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - netbird
+    - vpn
+    - mesh-network
+    - wireguard
+    - zero-trust
+    - sso
+    - postgresql
+    - cnpg
+    - cloud-native
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: netbird-management
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/netbird-management-1.16.0/netbird-management-1.16.0.tgz
+    version: 1.16.0
+  ollama:
+  - apiVersion: v2
+    appVersion: 0.18.1
+    created: "2026-03-26T17:22:31.338239006Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.deployAndYesIUnderstandAndAccceptTheRisk
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier ollama (https://ollama.com) deployment
+      on k8s. Please note that this is a private helm chart and not directly or indirectly
+      affiliated with ollama or its authors.
+    digest: 0e6ecea1ee1e28af84ca5114ac33d7d8930460d534368546141d9e1ad69fb9df
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - ollama
+    - ai
+    - ki
+    - llm
+    - backend
+    - helm
+    - cloud-native
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: ollama
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/ollama-0.20.1/ollama-0.20.1.tgz
+    version: 0.20.1
+  outline:
+  - apiVersion: v2
+    appVersion: 1.6.1
+    created: "2026-03-26T17:22:31.719174438Z"
+    dependencies:
+    - alias: postgresql
+      condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 18.5.12
+    - alias: redis
+      condition: redis.enabled
+      name: redis
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/redis
+      version: 0.4.1
+    - alias: libchart-cnps
+      condition: libchartCnps.deployAndYesIUnderstandAndAccceptTheRisk
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for an easier outline (https://getoutline.com) deployment
+      at kubernetes.
+    digest: 26bb4a5b09f1153135cb9285a306a0fbc22b207dd532b9a9157ee1fcdfce1211
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - outline
+    - app
+    - docs
+    - wiki
+    - sso
+    - helm
+    - postgresql
+    - cnpg
+    - cloud-native
+    - cnpg-cluster
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: outline
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/outline-1.13.0/outline-1.13.0.tgz
+    version: 1.13.0
+  paperless-ngx:
+  - annotations:
+      category: Documents
+      images: |
+        - name: paperless-ngx
+          image: ghcr.io/paperless-ngx/paperless-ngx:2.20.13
+        - name: gotenberg
+          image: docker.io/gotenberg/gotenberg:8.27
+        - name: tika
+          image: docker.io/apache/tika:3.3.0.0-full
+      securityContext: required
+    apiVersion: v2
+    appVersion: 2.20.13
+    created: "2026-03-26T17:22:31.918973995Z"
+    dependencies:
+    - alias: redis
+      condition: redis.enabled
+      name: redis
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/redis
+      version: 0.4.1
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying Paperless-ngx on Kubernetes.
+    digest: 4b8e8b9b84d2374a33876399518c6621e88ff075260971d7b9b9ec4570d014cb
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - paperless-ngx
+    - documents
+    - ocr
+    - dms
+    - redis
+    - cnpg
+    - cloud-native
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: paperless-ngx
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/paperless-ngx-0.3.1/paperless-ngx-0.3.1.tgz
+    version: 0.3.1
+  redis:
+  - apiVersion: v2
+    appVersion: 8.6.1
+    created: "2026-03-26T17:22:32.128049004Z"
+    description: A Helm chart for Redis k8s deployment, based on library/redis
+    digest: 787ceaf2a65e7f5d163ce8086f5f56492607c6303ca2cb53e037d893dc9b27a6
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - redis
+    - database
+    - cache
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: redis
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/redis-0.4.1/redis-0.4.1.tgz
+    version: 0.4.1
+  sonarqube:
+  - annotations:
+      category: DevSecOps
+      images: |
+        - name: sonarqube
+          image: sonarqube:26.3.0.120487-community
+      securityContext: compatible
+    apiVersion: v2
+    appVersion: 26.3.0.120487-community
+    created: "2026-03-26T17:22:32.291337896Z"
+    dependencies:
+    - alias: libchart-cnps
+      condition: libchartCnps.enabled
+      name: libchart-cnps
+      repository: file:///tmp/tmp.u4tYLXoR3C/staged-charts/libchart-cnps
+      version: 0.2.1
+    description: A Helm chart for deploying SonarQube Server on Kubernetes.
+    digest: 962840b8b9098d729fae978e68531ae778e384b78e4b111ef48af2c572426af4
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - sonarqube
+    - code-quality
+    - devsecops
+    - static-analysis
+    - helm
+    kubeVersion: '>=1.24.0'
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: sonarqube
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/sonarqube-0.3.0/sonarqube-0.3.0.tgz
+    version: 0.3.0
+  supabase:
+  - apiVersion: v2
+    appVersion: 0.4.3
+    created: "2026-03-26T17:22:32.474338192Z"
+    dependencies:
+    - alias: supabase
+      condition: supabase.enabled
+      name: supabase
+      repository: https://codeadminde.github.io/supabase-kubernetes
+      version: 0.4.3
+    description: A proxy chart for an easier supabase deployment at kubernetes. Take
+      a look at the dependency chart values.yaml (see https://github.com/CodeAdminDe/supabase-kubernetes)
+      and update at least security related values!!
+    digest: 9eae36182c2887265a5007024223367fbdeb1490904170675b906e2a1039e267
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - supabase
+    - app
+    - database
+    - poastgresql
+    - auth
+    - helm
+    - s3
+    - sso
+    - vector
+    - cnpg
+    - cloud-native
+    - cnpg-cluster
+    - functions
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: supabase
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/supabase-0.4.3/supabase-0.4.3.tgz
+    version: 0.4.3
+  webfinger:
+  - apiVersion: v2
+    appVersion: 0.10.0
+    created: "2026-03-26T17:22:32.638208237Z"
+    description: A Helm chart for an easy webfinger deployment at kubernetes.
+    digest: 2e03af44c65b33c094d2e3ba88f933ab9ed95f71787e6fbde61bf15c3fb8fe8b
+    home: https://github.com/CodeAdminDe/helm-charts
+    keywords:
+    - webfinger
+    - go
+    - web
+    - oidc
+    maintainers:
+    - email: frederic.roggon@codeadmin.de
+      name: Frederic Roggon
+      url: https://github.com/CodeAdminDe
+    name: webfinger
+    type: application
+    urls:
+    - https://github.com/CodeAdminDe/helm-charts-sandbox/releases/download/webfinger-0.5.0/webfinger-0.5.0.tgz
+    version: 0.5.0
+generated: "2026-03-26T17:22:32.638223105Z"
