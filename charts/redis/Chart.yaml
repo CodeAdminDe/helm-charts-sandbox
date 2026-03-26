@@ -2,7 +2,7 @@
 apiVersion: v2
 name: redis
 # renovate: bumpVersion
-version: 0.4.1
+version: 0.4.2
 # renovate: image=library/redis
 appVersion: "8.6.1"
 description: A Helm chart for Redis k8s deployment, based on library/redis
@@ -12,6 +12,6 @@ keywords:
   - database
   - cache
 maintainers:
-  - name: Frederic Roggon
+  - name: CodeAdminDe
     email: frederic.roggon@codeadmin.de
     url: https://github.com/CodeAdminDe
