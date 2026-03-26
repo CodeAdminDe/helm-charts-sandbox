@@ -93,7 +93,7 @@ runtimeClass:
 
 # -- The following minimal required env vars are necessary to deploy the webfinger image successfully.
 # See the upstream docs for further informations. You'll find these here: https://github.com/CodeAdminDe/webfinger
-webfingerIssuerUrl: "example.org"
+webfingerIssuerUrl: "https://example.org"
 webfingerRessource: "acct:user@example.org"
 webfingerAllowDomainWildcard: "false"
 

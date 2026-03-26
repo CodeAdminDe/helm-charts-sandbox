@@ -702,7 +702,7 @@ string
 			<td>
 				<div style="max-width: 300px;">
 <pre lang="json">
-"example.org"
+"https://example.org"
 </pre>
 </div>
 			</td>
