@@ -86,20 +86,20 @@ runtimeClass:
 
 # -- This configures the persistens of your release.
 persistence:
-    # If persistence.enabled: false, you'd loose your stored data as soon as the container restarts.
-    enabled: true
-    # -- Define the max directory size when using persistence.enabled: false
-    emptyDirSizeLimit: 500Mi
-    # -- Define the size of the PV when using persistence.enabled: true together with fileStorage.useLocal: true
-    size: 1Gi
-    # -- Define the storageClass to use when not providing a already existing PVC claim. Provide your cluster storageclass or leave it empty to use the default one.
-    storageClass: "longhorn"
-    # -- Define the accessModes to use when not providing a already existing PVC claim.
-    accessModes:
-    - ReadWriteOnce
-    # -- Define an already existing PVC claim.
-    # The following values will be ignored when providing an existingClaim: persistence.{size, storageClass, accessModes}
-    # existingClaim: "my-pvc"
+  # If persistence.enabled: false, you'd loose your stored data as soon as the container restarts.
+  enabled: true
+  # -- Define the max directory size when using persistence.enabled: false
+  emptyDirSizeLimit: 500Mi
+  # -- Define the size of the PV when using persistence.enabled: true together with fileStorage.useLocal: true
+  size: 1Gi
+  # -- Define the storageClass to use when not providing a already existing PVC claim. Provide your cluster storageclass or leave it empty to use the default one.
+  storageClass: "longhorn"
+  # -- Define the accessModes to use when not providing a already existing PVC claim.
+  accessModes:
+  - ReadWriteOnce
+  # -- Define an already existing PVC claim.
+  # The following values will be ignored when providing an existingClaim: persistence.{size, storageClass, accessModes}
+  # existingClaim: "my-pvc"
 
 # -- Provide env vars to the deployment.
 # Do not add secretes here... use additionalEnvSecrets instead!
