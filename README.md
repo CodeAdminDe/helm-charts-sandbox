@@ -59,5 +59,5 @@ The following charts are currently available:
 | redis | 0.4.1 | 8.6.1 | A Helm chart for Redis k8s deployment, based on library/redis |
 | sonarqube | 0.3.0 | 26.3.0.120487-community | A Helm chart for deploying SonarQube Server on Kubernetes. |
 | supabase | 0.4.3 | 0.4.3 | A proxy chart for an easier supabase deployment at kubernetes. Take a look at the dependency chart values.yaml (see https://github.com/CodeAdminDe/supabase-kubernetes) and update at least security related values!! |
-| webfinger | 0.5.0 | 0.10.0 | A Helm chart for an easy webfinger deployment at kubernetes. |
+| webfinger | 0.5.1 | 0.10.0 | A Helm chart for an easy webfinger deployment at kubernetes. |
 
