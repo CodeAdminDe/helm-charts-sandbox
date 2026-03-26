@@ -3,7 +3,7 @@ name: derper
 description: A Helm chart for running a Tailscale DERP relay on Kubernetes.
 type: application
 # renovate: bumpVersion
-version: 0.1.1
+version: 0.1.2
 # renovate: image=ghcr.io/codeadminde/derper
 appVersion: "1.94.2"
 home: https://github.com/CodeAdminDe/helm-charts
