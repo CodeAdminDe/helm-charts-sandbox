@@ -151,7 +151,7 @@ ingress:
       # secretName: chart-example-tls
       # -- secretName of the certificate to use.
       # When providing an empty string as secretNmae, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
-      secretName: "" # When providing an empty string as secretName, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
+      secretName: ""  # When providing an empty string as secretName, the key will be skipped. That allowes to use the default ingress-nginx certificate for this ingress object.
 
 # -- Specify default resources (not recommended, see values.yaml)
 resources: {}
