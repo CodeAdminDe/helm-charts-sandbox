@@ -16,7 +16,7 @@ keywords:
   - cloud-native
   - helm
 maintainers:
-  - name: Frederic Roggon
+  - name: CodeAdminDe
     email: frederic.roggon@codeadmin.de
     url: https://github.com/CodeAdminDe
 annotations:

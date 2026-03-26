@@ -12,7 +12,7 @@ A Helm chart for running a Tailscale DERP relay on Kubernetes.
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Frederic Roggon | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
+| CodeAdminDe | <frederic.roggon@codeadmin.de> | <https://github.com/CodeAdminDe> |
 
 ## TL;DR
 
